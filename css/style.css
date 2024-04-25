@@ -37,7 +37,6 @@ body {
     justify-content: start;
     flex-wrap: wrap;
     margin-bottom: 40px;
-
 }
 
 .product-info img {
@@ -49,8 +48,19 @@ body {
 }
 
 .product-info h2 {
+    display: flex;
     font-size: 24px;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
+    margin-right: 49px;
+}
+
+.product-info p {
+    font-size: 16px;
+    color: #333;
+    margin-top: 5px;
+    text-align: start;
+    word-wrap: break-word;
+
 }
 
 .input-group {
@@ -86,10 +96,26 @@ body {
 }
 
 .payment-option {
+    padding: 20px 40px;
+    border: 2px solid #f1f1f1;
+    border-radius: 8px;
     cursor: pointer;
     margin: 0 10px;
-    font-size: 32px;
+    font-size: 16px;
     transition: color 0.3s ease;
+}
+
+#card-option {
+    padding: 20px 25px;
+}
+
+.payment-option i {
+    margin-right: 9px;
+}
+
+.payment-option span {
+    font-family: 'poppins', sans-serif;
+    font-weight: lighter;
 }
 
 .payment-option:hover {
