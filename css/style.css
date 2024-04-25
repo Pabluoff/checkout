@@ -89,6 +89,13 @@ body {
     border-color: #007bff;
 }
 
+.input-group input[type="text"]::placeholder,
+.input-group input[type="email"]::placeholder,
+.input-group input[type="tel"]::placeholder,
+.input-group select::placeholder {
+    color: #3c3c3c;
+}
+
 .payment-methods {
     display: flex;
     justify-content: center;
@@ -119,7 +126,7 @@ body {
 }
 
 .payment-option:hover {
-    border-color: #04ca56 ;
+    border-color: #04ca56;
     background-color: #f7f7f7;
 }
 
