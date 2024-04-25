@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'poppins', Arial, sans-serif;
+    background-color: #eff1f3;
+    color: #333;
+}
+
+/* Estilo para o checkout */
+.checkout-section {
+    padding: 40px 0;
+    text-align: center;
+    padding-bottom: 0;
+}
+
+.container-header {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.container {
+    background-color: #fefefec2;
+    border: 1px solid #e0e0e0;
+    padding: 15px 15px;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+
+.product-info {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+
+}
+
+.product-info img {
+    margin-left: 15px;
+    max-width: 100px;
+    margin-right: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.product-info h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-top: 12px;
+    margin-bottom: 20px;
+}
+
+.input-group input[type="text"],
+.input-group input[type="email"],
+.input-group input[type="tel"],
+.input-group select {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    background-color: transparent;
+    border-radius: 8px;
+    font-size: 16px;
+
+}
+
+.input-group input[type="text"]:focus,
+.input-group input[type="email"]:focus,
+.input-group input[type="tel"]:focus,
+.input-group select:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.payment-methods {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.payment-option {
+    cursor: pointer;
+    margin: 0 10px;
+    font-size: 32px;
+    transition: color 0.3s ease;
+}
+
+.payment-option:hover {
+    color: #007bff;
+}
+
+.payment-details {
+    text-align: left;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.payment-details p {
+    margin-bottom: 10px;
+}
+
+.payment-details select {
+    width: calc(50% - 5px);
+    margin-right: 5px;
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #ffffff;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.payment-details select:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.btn-primary {
+    padding: 15px 90px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.payment-success {
+    display: none;
+    text-align: center;
+}
+
+.payment-success ol {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.qr-code {
+    margin-bottom: 20px;
+}
+
+.total {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.espaço {
+    margin-top: 30px;
+}
