@@ -74,7 +74,7 @@ body {
 .input-group select {
     width: 100%;
     padding: 15px;
-    border: 2px solid #e0e0e0;
+    border: 1px solid #cfd8de;
     background-color: transparent;
     border-radius: 8px;
     font-size: 16px;
