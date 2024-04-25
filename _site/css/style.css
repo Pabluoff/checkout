@@ -140,6 +140,7 @@ body {
     margin-bottom: 10px;
 }
 
+/* Estilizando o select para dispositivos iOS */
 .payment-details select {
     width: calc(50% - 5px);
     margin-right: 5px;
@@ -149,18 +150,27 @@ body {
     background-color: #ffffff;
     font-size: 16px;
     transition: all 0.3s ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" fill="%23C0C0C0"%3E%3Cpath d="M8 12.854l-5.854-5.854a.75.75 0 111.06-1.06L8 10.793l5.793-5.793a.75.75 0 111.06 1.06L8.707 12.207a1 1 0 01-1.414 0z"/%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-position: right 10px, center;
+}
+
+.payment-details select::-ms-expand {
+    display: none;
+}
+
+.payment-details select::-webkit-inner-spin-button,
+.payment-details select::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 .payment-details select:focus {
     outline: none;
     border-color: #007bff;
-}
-
-@supports (-webkit-appearance:none) or (appearance:none) {
-    .input-group select {
-        -webkit-appearance: none;
-        appearance: none;
-    }
 }
 
 .Btn {
