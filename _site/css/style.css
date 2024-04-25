@@ -122,20 +122,50 @@ body {
     border-color: #007bff;
 }
 
-.btn-primary {
-    padding: 15px 90px;
-    background-color: #007bff;
-    color: #fff;
+.Btn {
+    width: 330px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    background-color: #00ff6a;
     border: none;
-    border-radius: 8px;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    gap: 8px;
     cursor: pointer;
-    font-size: 18px;
-    transition: background-color 0.3s ease;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.103);
+    position: relative;
+    overflow: hidden;
+    transition-duration: .3s;
+    margin-top: 30px;
     margin-bottom: 20px;
 }
 
-.btn-primary:hover {
-    background-color: #0056b3;
+.svgIcon {
+    width: 16px;
+}
+
+.svgIcon path {
+    fill: rgb(0, 0, 0);
+}
+
+.Btn::before {
+    width: 330px;
+    height: 130px;
+    position: absolute;
+    content: "";
+    background-color: #001000;
+    border-radius: 50%;
+    left: -100%;
+    top: 0;
+    transition-duration: .3s;
+    mix-blend-mode: overlay;
+}
+
+.Btn:hover::before {
+    transition-duration: .3s;
+    transform: translate(100%, -50%);
+    border-radius: 0;
 }
 
 .payment-success {
