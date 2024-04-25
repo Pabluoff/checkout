@@ -127,9 +127,9 @@ body {
     height: 50px;
     align-items: center;
     justify-content: center;
-    background-color: #00ff6a;
+    background-color: #04ca56;
     border: none;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     font-weight: 600;
     gap: 8px;
     cursor: pointer;
@@ -139,14 +139,17 @@ body {
     transition-duration: .3s;
     margin-top: 30px;
     margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 16px;
 }
 
 .svgIcon {
-    width: 16px;
+    width: 19px;
 }
 
 .svgIcon path {
-    fill: rgb(0, 0, 0);
+    fill: rgb(255, 255, 255);
+
 }
 
 .Btn::before {
