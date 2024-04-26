@@ -281,3 +281,40 @@ body {
     text-align: start;
     color: #8d96a0;
 }
+
+
+.text-logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, rgb(187, 187, 187) 7%, rgb(217, 244, 250) 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.text-logo a:hover {
+    text-decoration: none;
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 12px;
+    color: #8d96a0;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+.underline {
+    color: #337ab7;
+    text-decoration: none;
+}
+
+.underline:hover {
+    text-decoration: underline;
+}
+
+footer {
+    padding-bottom: 12px;
+}
