@@ -18,35 +18,3 @@ function selectPaymentMethod(method) {
         pixOption.classList.add('selected');
     }
 }
-
-const chavePix = "pabluopayments+mp@gmail.com";
-const valor = 24.97; // Exemplo de valor
-const descricao = "Descrição do pagamento PIX"; // Descrição do pagamento
-
-// Configuração do Mercado Pago
-Mercadopago.setPublishableKey('APP_USR-bfa1f595-46ed-48d9-b26c-ce5d5194926a');
-
-// Função para iniciar o pagamento PIX
-function pagarComPix() {
-    const pagamento = {
-        method: 'pix',
-        pix: {
-            key: chavePix,
-        },
-        transaction_amount: valor,
-        description: descricao,
-    };
-
-    // Realiza o pagamento
-    Mercadopago.createPayment(pagamento, function (status, response) {
-        if (status === 201) {
-            // Pagamento realizado com sucesso
-            console.log('Pagamento PIX realizado com sucesso:', response);
-            // Redirecionar para página de sucesso ou fazer outras ações necessárias
-        } else {
-            // Erro ao processar pagamento
-            console.error('Erro ao processar pagamento PIX:', response);
-            // Exibir mensagem de erro para o usuário
-        }
-    });
-}
