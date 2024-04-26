@@ -100,17 +100,6 @@ body {
     color: #4c4c4c;
 }
 
-/* Estilos para campos de entrada válidos */
-.input-valid {
-    border-color: #28a745;
-    /* Verde */
-}
-
-/* Estilos para campos de entrada inválidos */
-.input-invalid {
-    border-color: #dc3545;
-    /* Vermelho */
-}
 
 .payment-methods {
     display: flex;

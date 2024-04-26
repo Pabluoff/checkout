@@ -1,65 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Definindo o event listener para o submit do formulário
-    const form = document.getElementById('checkout-form');
-    form.addEventListener('submit', function (event) {
-        event.preventDefault(); // Impede o envio do formulário
-
-        // Verifica se o método de pagamento é Pix
-        if (document.getElementById('pix-option').classList.contains('selected')) {
-            // Verifica se todos os campos estão preenchidos
-            const fullname = document.getElementById('fullname').value;
-            const email = document.getElementById('email').value;
-            const confirmEmail = document.getElementById('confirm-email').value;
-            const cpf = document.getElementById('cpf').value;
-            const phone = document.getElementById('phone').value;
-
-            // Verifica se todos os campos obrigatórios estão preenchidos
-            if (fullname && email && confirmEmail && cpf && phone) {
-                // Exibe o payment-success se todos os campos estiverem preenchidos
-                document.getElementById('payment-success').style.display = 'block';
-            } else {
-                // Caso contrário, exibe uma mensagem de erro ou realiza outras ações necessárias
-                alert('Por favor, preencha todos os campos.');
-            }
-        }
-    });
-
-    // Definindo event listeners para validação em tempo real
-    const fullnameInput = document.getElementById('fullname');
-    fullnameInput.addEventListener('input', function () {
-        validateInput(fullnameInput);
-    });
-
-    const emailInput = document.getElementById('email');
-    emailInput.addEventListener('input', function () {
-        validateInput(emailInput);
-    });
-
-    const confirmEmailInput = document.getElementById('confirm-email');
-    confirmEmailInput.addEventListener('input', function () {
-        validateInput(confirmEmailInput);
-    });
-
-    const cpfInput = document.getElementById('cpf');
-    cpfInput.addEventListener('input', function () {
-        validateInput(cpfInput);
-    });
-
-    const phoneInput = document.getElementById('phone');
-    phoneInput.addEventListener('input', function () {
-        validateInput(phoneInput);
-    });
+    selectPaymentMethod('card');
 });
-
-function validateInput(input) {
-    if (input.checkValidity()) {
-        input.classList.remove('input-invalid');
-        input.classList.add('input-valid');
-    } else {
-        input.classList.remove('input-valid');
-        input.classList.add('input-invalid');
-    }
-}
 
 function selectPaymentMethod(method) {
     const cardOption = document.getElementById('card-option');
@@ -76,4 +17,36 @@ function selectPaymentMethod(method) {
         cardOption.classList.remove('selected');
         pixOption.classList.add('selected');
     }
+}
+
+const chavePix = "pabluopayments+mp@gmail.com";
+const valor = 24.97; // Exemplo de valor
+const descricao = "Descrição do pagamento PIX"; // Descrição do pagamento
+
+// Configuração do Mercado Pago
+Mercadopago.setPublishableKey('APP_USR-bfa1f595-46ed-48d9-b26c-ce5d5194926a');
+
+// Função para iniciar o pagamento PIX
+function pagarComPix() {
+    const pagamento = {
+        method: 'pix',
+        pix: {
+            key: chavePix,
+        },
+        transaction_amount: valor,
+        description: descricao,
+    };
+
+    // Realiza o pagamento
+    Mercadopago.createPayment(pagamento, function (status, response) {
+        if (status === 201) {
+            // Pagamento realizado com sucesso
+            console.log('Pagamento PIX realizado com sucesso:', response);
+            // Redirecionar para página de sucesso ou fazer outras ações necessárias
+        } else {
+            // Erro ao processar pagamento
+            console.error('Erro ao processar pagamento PIX:', response);
+            // Exibir mensagem de erro para o usuário
+        }
+    });
 }
