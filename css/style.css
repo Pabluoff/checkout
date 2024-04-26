@@ -18,7 +18,7 @@ body {
 }
 
 .container-header {
-    max-width: 800px;
+    max-width: 600px;
     margin: 0 auto;
 }
 
@@ -26,7 +26,7 @@ body {
     background-color: #fefefec2;
     border: 1px solid #e0e0e0;
     padding: 15px 15px;
-    max-width: 800px;
+    max-width: 600px;
     margin: 0 auto;
     border-radius: 8px;
 }
@@ -52,6 +52,7 @@ body {
     font-size: 24px;
     margin-bottom: 5px;
     margin-right: 49px;
+    white-space: normal;
 }
 
 .product-info p {
@@ -59,13 +60,15 @@ body {
     color: #333;
     margin-top: 5px;
     text-align: start;
-    word-wrap: break-word;
+    white-space: nowrap;
+    ;
 
 }
 
 .input-group {
     margin-top: 12px;
     margin-bottom: 20px;
+    position: relative;
 }
 
 .input-group input[type="text"],
@@ -89,6 +92,7 @@ body {
     border-color: #007bff;
 }
 
+
 .input-group input[type="text"]::placeholder,
 .input-group input[type="email"]::placeholder,
 .input-group input[type="tel"]::placeholder,
@@ -106,6 +110,7 @@ body {
     padding: 20px 40px;
     border: 1px solid #e3e3e3;
     border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 52, 29, 0.062);
     cursor: pointer;
     margin: 0 10px;
     font-size: 17px;
@@ -114,6 +119,15 @@ body {
 
 #card-option {
     padding: 20px 25px;
+}
+
+.input-group i {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    color: #000000;
+    font-size: 15px;
 }
 
 .payment-option i {
@@ -153,7 +167,7 @@ body {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" fill="%23C0C0C0"%3E%3Cpath d="M8 12.854l-5.854-5.854a.75.75 0 111.06-1.06L8 10.793l5.793-5.793a.75.75 0 111.06 1.06L8.707 12.207a1 1 0 01-1.414 0z"/%3E%3C/svg%3E');
+    background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35" fill="%23C0C0C0"%3E%3Cpath d="M8 12.854l-5.854-5.854a.75.75 0 111.06-1.06L8 10.793l5.793-5.793a.75.75 0 111.06 1.06L8.707 12.207a1 1 0 01-1.414 0z"/%3E%3C/svg%3E');
     background-repeat: no-repeat;
     background-position: right 10px, center;
 }
@@ -202,11 +216,10 @@ body {
     position: relative;
     overflow: hidden;
     transition-duration: .3s;
-    margin-top: 30px;
     margin-bottom: 20px;
     font-weight: bold;
     font-size: 17px;
-    border-radius: 7px;
+    border-radius: 9px;
 }
 
 .svgIcon {
@@ -246,6 +259,7 @@ body {
     text-align: left;
     margin-bottom: 20px;
 }
+
 
 .qr-code {
     margin-bottom: 20px;
