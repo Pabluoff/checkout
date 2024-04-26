@@ -284,6 +284,7 @@ body {
 
 
 .text-logo {
+    text-transform: uppercase;
     font-size: 21px;
     font-weight: bold;
     margin-bottom: 10px;
