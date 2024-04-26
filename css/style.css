@@ -23,12 +23,12 @@ body {
 }
 
 .container {
-    background-color: #fefefee2;
+    background-color: white;
     border: 1px solid #e0e0e0;
     padding: 15px 15px;
     max-width: 600px;
     margin: 0 auto;
-    border-radius: 8px;
+    border-radius: 6px;
 }
 
 .product-info {
