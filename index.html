@@ -118,7 +118,7 @@
         </footer>
 
         </form>
-        <div id="payment-success" class="payment-success" style="display: none;">
+        <div id="payment-success" class="payment-success">
             <p>Pedido gerado! Agora finalize o pagamento</p>
             <ol>
                 <li>Abra o app do seu banco e entre na opção Pix.</li>
@@ -134,6 +134,17 @@
         </div>
         </div>
     </section>
+    <script>
+        window.onload = function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const qrUrl = urlParams.get('qrUrl');
+            if (qrUrl) {
+                const qrCodeDiv = document.querySelector('.payment-success .qr-code');
+                qrCodeDiv.innerHTML = `<img src="${qrUrl}" alt="QR Code">`;
+            }
+        }
+    </script>
+
     <script src="/js/script.js"></script>
 </body>
 
