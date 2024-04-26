@@ -71,57 +71,70 @@
                             <!-- Adicione mais opções de parcelamento conforme necessário -->
                         </select>
                     </div>
-                    <div id="pix-section" class="payment-details" style="display: none;">
-                        <p>Informações sobre o pagamento via PIX:</p>
-                        <p>Valor à vista: R$ (valor).</p>
-                        <p>Liberação imediata!</p>
-                        <p>É simples, só usar o aplicativo de seu banco para pagar PIX.</p>
-                        <p>Super seguro. O pagamento PIX foi desenvolvido pelo Banco Central para facilitar pagamentos.
-                        </p>
-                    </div>
-            </form>
-            <div id="payment-success" class="payment-success" style="display: none;">
-                <p>Pedido gerado! Agora finalize o pagamento</p>
-                <ol>
-                    <li>Abra o app do seu banco e entre na opção Pix.</li>
-                    <li>Escolha a opção Pagar / Pix copia e cola .</li>
-                    <li>Escaneie o QR code. Se preferir, copie e cole o código.</li>
-                    <li>Depois, confirme o pagamento.</li>
-                </ol>
-                <p>A aprovação leva no máximo 2 minutos.</p>
-                <div class="qr-code">QR CODE AQUI</div>
-                <button class="btn-primary">COPIAR CÓDIGO PIX</button>
-                <button class="btn-primary">JÁ FIZ O PAGAMENTO</button>
-                <div class="total">TOTAL: R$ (valor)</div>
-            </div>
+                </div>
+                <div id="pix-section" class="payment-details">
+                    <p style="font-weight: bold;">Informações sobre o pagamento via PIX:</p>
+                    <ul>
+                        <li>
+                            <p>Valor à vista: <span style="font-weight: bold;">R$ (valor).</span></p>
+                        </li>
+                        <li>
+                            <p>Liberação imediata!</p>
+                        </li>
+                        <li>
+                            <p>É simples, só usar o aplicativo de seu banco para pagar PIX.</p>
+                        </li>
+                        <li>
+                            <p>Super seguro. O pagamento PIX foi desenvolvido pelo Banco Central para facilitar
+                                pagamentos.</p>
+                        </li>
+                    </ul>
+                </div>
+                <p class="payment-security-info">
+                    <i class="fa-solid fa-shield"></i> Nós protegemos seus dados de pagamento usando encriptação para
+                    prover
+                    segurança no nível de bancos.
+                </p>
+                <button type="submit" class="Btn">
+                    Pagar Agora
+                    <svg class="svgIcon" viewBox="0 0 576 512">
+                        <path
+                            d="M512 80c8.8 0 16 7.2 16 16v32H48V96c0-8.8 7.2-16 16-16H512zm16 144V416c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V224H528zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm56 304c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24H120zm128 0c-13.3 0-24 10.7-24 24s10.7 24 24 24H360c13.3 0 24-10.7 24-24s-10.7-24-24-24H248z">
+                        </path>
+                    </svg>
+                </button>
+                <footer>
+                    <a href="https://www.instagram.com/cashless.company" target="_blank">
+                        <p class="text-logo">cashless</p>
+                    </a>
+                    <p>cashless.company está processando este pagamento</p>
+                    <p>Este site é protegido pelo reCAPTCHA do Google</p>
+                    <p><a class="underline" href="https://policies.google.com/privacy" target="_blank">Política de
+                            Privacidade</a> e <a class="underline" href="https://policies.google.com/terms"
+                            target="_blank">Termos de Serviço</a></p>
+                    <p>*Parcelamento com acréscimo</p>
+                    <p>Ao continuar, você concorda com os <a class="underline" href="#">Termos de Compra</a>.</p>
         </div>
-        <p class="payment-security-info">
-            <i class="fa-solid fa-shield"></i> Nós protegemos seus dados de pagamento usando encriptação para prover
-            segurança no nível de bancos.
-        </p>
-        <button type="submit" class="Btn">
-            Pagar Agora
-            <svg class="svgIcon" viewBox="0 0 576 512">
-                <path
-                    d="M512 80c8.8 0 16 7.2 16 16v32H48V96c0-8.8 7.2-16 16-16H512zm16 144V416c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V224H528zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm56 304c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24H120zm128 0c-13.3 0-24 10.7-24 24s10.7 24 24 24H360c13.3 0 24-10.7 24-24s-10.7-24-24-24H248z">
-                </path>
-            </svg>
-        </button>
-        <footer>
-            <a href="https://www.instagram.com/cashless.company" target="_blank">
-                <p class="text-logo">cashless</p>
-            </a>
-            <p>cashless.company está processando este pagamento</p>
-            <p>Este site é protegido pelo reCAPTCHA do Google</p>
-            <p><a class="underline" href="https://policies.google.com/privacy" target="_blank">Política de Privacidade</a> e <a
-                    class="underline" href="https://policies.google.com/terms" target="_blank">Termos de Serviço</a></p>
-            <p>*Parcelamento com acréscimo</p>
-            <p>Ao continuar, você concorda com os <a class="underline" href="#">Termos de Compra</a>.</p>
-            </div>
         </footer>
 
-
+        </form>
+        <div id="payment-success" class="payment-success" style="display: none;">
+            <p>Pedido gerado! Agora finalize o pagamento</p>
+            <ol>
+                <li>Abra o app do seu banco e entre na opção Pix.</li>
+                <li>Escolha a opção Pagar / Pix copia e cola .</li>
+                <li>Escaneie o QR code. Se preferir, copie e cole o código.</li>
+                <li>Depois, confirme o pagamento.</li>
+            </ol>
+            <p>A aprovação leva no máximo 2 minutos.</p>
+            <div class="qr-code">QR CODE AQUI</div>
+            <button class="btn-primary">COPIAR CÓDIGO PIX</button>
+            <button class="btn-primary">JÁ FIZ O PAGAMENTO</button>
+            <div class="total">TOTAL: R$ (valor)</div>
+        </div>
+        </div>
     </section>
+    <script src="/js/script.js"></script>
 </body>
 
 </html>
