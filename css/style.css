@@ -23,7 +23,7 @@ body {
 }
 
 .container {
-    background-color: #fefefec2;
+    background-color: #fefefeda;
     border: 1px solid #e0e0e0;
     padding: 15px 15px;
     max-width: 600px;
@@ -273,4 +273,11 @@ body {
 
 .espaço {
     margin-top: 30px;
+}
+
+.payment-security-info {
+    font-size: 15px;
+    margin-bottom: 20px;
+    text-align: start;
+    color: #8d96a0;
 }
