@@ -311,12 +311,11 @@ document.getElementById('checkout-form').addEventListener('submit', function (ev
     updateEmail(email);
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-    // Adiciona a classe de carregamento ao abrir o site
-    document.getElementById('loader').classList.add('loading');
 
-    // Define um atraso de 5 segundos antes de remover a classe de carregamento
+window.addEventListener('load', function () {
+    const loader = document.getElementById('loader');
+
     setTimeout(function () {
-        document.getElementById('loader').style.display = 'none';
-    }, 2000);
+        loader.style.display = 'none';
+    }, 1000);
 });
