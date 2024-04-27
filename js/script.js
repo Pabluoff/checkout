@@ -298,7 +298,7 @@ document.getElementById('card-number').addEventListener('input', formatCardNumbe
 document.getElementById('cvv').addEventListener('input', formatCVV);
 
 
-// Atualizar e-mail exibido na página de congratulação
+// Atualizar e-mail exibido na página de obgd
 function updateEmail(email) {
     const emailSpan = document.getElementById('user-email');
     emailSpan.textContent = email;
