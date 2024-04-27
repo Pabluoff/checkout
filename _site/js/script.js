@@ -82,7 +82,7 @@ function highlightEmptyInputs(method) {
         if (!inputElement.value || inputElement.style.borderColor === 'red') {
             inputElement.style.borderColor = 'red';
         } else {
-            inputElement.style.borderColor = 'green'; 
+            inputElement.style.borderColor = 'green';
         }
     });
 }
@@ -284,7 +284,7 @@ function isValidExpirationDate(date) {
     const month = parseInt(parts[0]);
     const year = parseInt(parts[1]);
 
-    const currentYear = new Date().getFullYear() % 100; 
+    const currentYear = new Date().getFullYear() % 100;
     return month >= 1 && month <= 12 && (year > currentYear || (year === currentYear && month >= new Date().getMonth() + 1));
 }
 
@@ -309,4 +309,14 @@ document.getElementById('checkout-form').addEventListener('submit', function (ev
     event.preventDefault();
     const email = document.getElementById('email').value.trim();
     updateEmail(email);
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Adiciona a classe de carregamento ao abrir o site
+    document.getElementById('loader').classList.add('loading');
+
+    // Define um atraso de 5 segundos antes de remover a classe de carregamento
+    setTimeout(function () {
+        document.getElementById('loader').style.display = 'none';
+    }, 2000);
 });
