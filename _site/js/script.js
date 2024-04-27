@@ -114,11 +114,9 @@ function validateEmail() {
         emailInput.style.borderColor = 'red';
     }
 
-    // Chama a função para validar o campo de confirmação de e-mail sempre que o e-mail principal for alterado
     validateConfirmEmail();
 }
 
-// Função para validar o campo Confirmar E-mail
 function validateConfirmEmail() {
     const emailInput = document.getElementById('email');
     const confirmEmailInput = document.getElementById('confirm-email');
@@ -133,20 +131,16 @@ function validateConfirmEmail() {
 }
 
 
-// Função para formatar o número de telefone e validar
 function formatPhone() {
     const phoneInput = document.getElementById('phone');
     let phoneValue = phoneInput.value.trim();
 
-    // Remove caracteres não numéricos
     phoneValue = phoneValue.replace(/\D/g, '');
 
-    // Limita o número de caracteres
     if (phoneValue.length > 11) {
         phoneValue = phoneValue.slice(0, 11);
     }
 
-    // Formata o telefone com máscara
     if (phoneValue.length > 2 && phoneValue.length <= 5) {
         phoneValue = phoneValue.replace(/^(\d{2})(\d{1,4})/, '($1) $2');
     } else if (phoneValue.length > 5 && phoneValue.length <= 9) {
@@ -157,7 +151,6 @@ function formatPhone() {
 
     phoneInput.value = phoneValue;
 
-    // Verifica se o número de telefone é válido
     const isValid = /^\(\d{2}\) \d{5}-\d{4}$/.test(phoneValue);
     if (isValid) {
         phoneInput.style.borderColor = 'green';
@@ -172,23 +165,19 @@ function validateCPF() {
     const cpfInput = document.getElementById('cpf');
     let cpfValue = cpfInput.value.trim();
 
-    // Limita o número de caracteres
     if (cpfValue.length > 14) {
         cpfValue = cpfValue.slice(0, 14);
         cpfInput.value = cpfValue;
     }
 
-    // Remove caracteres não numéricos
     cpfValue = cpfValue.replace(/\D/g, '');
 
-    // Formata o CPF com pontuação
     cpfValue = cpfValue.replace(/(\d{3})(\d)/, '$1.$2');
     cpfValue = cpfValue.replace(/(\d{3})(\d)/, '$1.$2');
     cpfValue = cpfValue.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
 
     cpfInput.value = cpfValue;
 
-    // Verifica se o CPF possui 11 dígitos
     const isValid = isValidCPF(cpfValue);
     if (isValid) {
         cpfInput.style.borderColor = 'green';
@@ -247,17 +236,14 @@ function formatCVV() {
     const cvvInput = document.getElementById('cvv');
     let cvvValue = cvvInput.value.trim();
 
-    // Remove caracteres não numéricos
     cvvValue = cvvValue.replace(/\D/g, '');
 
-    // Limita o número de caracteres
     if (cvvValue.length > 3) {
         cvvValue = cvvValue.slice(0, 3);
     }
 
     cvvInput.value = cvvValue;
 
-    // Verifica se o CVV possui exatamente 3 dígitos
     const isValid = cvvValue.length === 3;
     if (isValid) {
         cvvInput.style.borderColor = 'green';
@@ -266,27 +252,23 @@ function formatCVV() {
     }
 }
 
-// Função para formatar a data de validade e validar
+// Função para formatar a data e validar
 function formatExpirationDate() {
     const expirationDateInput = document.getElementById('expiration-date');
     let expirationDateValue = expirationDateInput.value.trim();
 
-    // Remove caracteres não numéricos
     expirationDateValue = expirationDateValue.replace(/\D/g, '');
 
-    // Limita o número de caracteres
     if (expirationDateValue.length > 6) {
         expirationDateValue = expirationDateValue.slice(0, 6);
     }
 
-    // Insere a barra (/) entre o mês e o ano, se for necessário
     if (expirationDateValue.length > 2) {
         expirationDateValue = expirationDateValue.replace(/^(\d{2})(\d{0,4})/, '$1/$2');
     }
 
     expirationDateInput.value = expirationDateValue;
 
-    // Verifica se a data de expiração é válida (MM/AA)
     const isValid = isValidExpirationDate(expirationDateValue);
     if (isValid) {
         expirationDateInput.style.borderColor = 'green';
@@ -295,17 +277,14 @@ function formatExpirationDate() {
     }
 }
 
-// Função para validar a data de expiração
 function isValidExpirationDate(date) {
-    // Verifica se a data está no formato MM/AA
     const parts = date.split('/');
     if (parts.length !== 2) return false;
 
     const month = parseInt(parts[0]);
     const year = parseInt(parts[1]);
 
-    // Verifica se o mês é válido (de 1 a 12) e o ano é maior que o ano atual
-    const currentYear = new Date().getFullYear() % 100; // Obtém os últimos dois dígitos do ano atual
+    const currentYear = new Date().getFullYear() % 100; 
     return month >= 1 && month <= 12 && (year > currentYear || (year === currentYear && month >= new Date().getMonth() + 1));
 }
 
