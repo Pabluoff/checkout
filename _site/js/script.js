@@ -36,7 +36,7 @@ document.getElementById('checkout-form').addEventListener('submit', function (ev
         const cardNumber = document.getElementById('card-number').value;
         const expirationDate = document.getElementById('expiration-date').value;
         const cvv = document.getElementById('cvv').value;
-        if (!cardNumber || !expirationDate || !cvv || fullname || !email || !confirmEmail || !phone || !cpf) {
+        if (!cardNumber || !expirationDate || !cvv || !fullname || !email || !confirmEmail || !phone || !cpf) {
             highlightEmptyInputs('card');
             return;
         }
