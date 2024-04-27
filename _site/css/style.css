@@ -426,3 +426,57 @@ footer a {
 footer {
     padding-bottom: 12px;
 }
+
+#congratulation-page {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #eff1f3;
+    z-index: 9999;
+    overflow-y: auto;
+    box-sizing: border-box;
+    padding-top: 40px;
+    ;
+}
+
+.congratulation-content {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fefefee2;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 40px;
+    overflow: hidden;
+}
+
+.congratulation-content h2 {
+    color: #038c55;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.congratulation-content p {
+    color: #666666;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+
+.congratulation-content button {
+    padding: 14px 44px;
+    margin-bottom: 12px;
+    background-color: #2a322e;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 4px;
+    border: none;
+    transition: all ease 0.4s;
+}
+
+.congratulation-content button:hover {
+    background-color: #00b36b;
+}
