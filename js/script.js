@@ -21,17 +21,22 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.getElementById('checkout-form').addEventListener('submit', function (event) {
-    event.preventDefault(); 
+    event.preventDefault();
 
     const method = document.querySelector('.payment-option.selected').id.replace('-option', '');
     const cardSection = document.getElementById('card-section');
     const pixSection = document.getElementById('pix-section');
 
     if (method === 'card') {
+        const fullname = document.getElementById('fullname').value;
+        const email = document.getElementById('email').value;
+        const confirmEmail = document.getElementById('confirm-email').value;
+        const phone = document.getElementById('phone').value;
+        const cpf = document.getElementById('cpf').value;
         const cardNumber = document.getElementById('card-number').value;
         const expirationDate = document.getElementById('expiration-date').value;
         const cvv = document.getElementById('cvv').value;
-        if (!cardNumber || !expirationDate || !cvv) {
+        if (!cardNumber || !expirationDate || !cvv || fullname || !email || !confirmEmail || !phone || !cpf) {
             highlightEmptyInputs('card');
             return;
         }
