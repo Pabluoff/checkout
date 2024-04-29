@@ -1,14 +1,17 @@
+// Função para selecionar o método de pagamento
 function selectPaymentMethod(method) {
     const cardOption = document.getElementById('card-option');
     const pixOption = document.getElementById('pix-option');
     const checkoutForm = document.getElementById('checkout-form');
 
+    // Exibe a seção do cartão e oculta a do PIX ao selecionar o pagamento com cartão
     if (method === 'card') {
         document.getElementById('card-section').style.display = 'block';
         document.getElementById('pix-section').style.display = 'none';
         cardOption.classList.add('selected');
         pixOption.classList.remove('selected');
     } else if (method === 'pix') {
+        // Exibe a seção do PIX e oculta a do cartão ao selecionar o pagamento com PIX
         document.getElementById('card-section').style.display = 'none';
         document.getElementById('pix-section').style.display = 'block';
         cardOption.classList.remove('selected');
@@ -16,18 +19,22 @@ function selectPaymentMethod(method) {
     }
 }
 
+// Executa a função de seleção de método de pagamento ao carregar o documento
 document.addEventListener('DOMContentLoaded', function () {
     selectPaymentMethod('card');
 });
 
+// Adiciona um listener para o evento de envio do formulário de checkout
 document.getElementById('checkout-form').addEventListener('submit', function (event) {
     event.preventDefault();
 
+    // Obtém o método de pagamento selecionado
     const method = document.querySelector('.payment-option.selected').id.replace('-option', '');
     const cardSection = document.getElementById('card-section');
     const pixSection = document.getElementById('pix-section');
     let isValid = true;
 
+    // Verifica os campos relevantes com base no método de pagamento selecionado
     if (method === 'card') {
         const cardNumber = document.getElementById('card-number').value;
         const expirationDate = document.getElementById('expiration-date').value;
@@ -54,12 +61,12 @@ document.getElementById('checkout-form').addEventListener('submit', function (ev
         }
     }
 
-    // Exibir payment-success apenas se o método de pagamento for PIX e todos os campos PIX estiverem preenchidos
+    // Exibe a mensagem de sucesso apenas se o método de pagamento for PIX e todos os campos PIX estiverem preenchidos
     if (isValid && method === 'pix') {
         document.getElementById('payment-success').style.display = 'block';
     }
 
-    // Exibir congratulations-page apenas se o método de pagamento for cartão e todos os campos cartão estiverem preenchidos
+    // Exibe a página de parabéns apenas se o método de pagamento for cartão e todos os campos cartão estiverem preenchidos
     if (isValid && method === 'card') {
         document.getElementById('congratulation-page').style.display = 'block';
     }
@@ -117,6 +124,7 @@ function validateEmail() {
     validateConfirmEmail();
 }
 
+// Função para validar a confirmação do e-mail
 function validateConfirmEmail() {
     const emailInput = document.getElementById('email');
     const confirmEmailInput = document.getElementById('confirm-email');
@@ -130,17 +138,15 @@ function validateConfirmEmail() {
     }
 }
 
-
+// Função para formatar o número de telefone
 function formatPhone() {
     const phoneInput = document.getElementById('phone');
     let phoneValue = phoneInput.value.trim();
 
+    // Remove caracteres não numéricos
     phoneValue = phoneValue.replace(/\D/g, '');
 
-    if (phoneValue.length > 11) {
-        phoneValue = phoneValue.slice(0, 11);
-    }
-
+    // Formata o número de telefone
     if (phoneValue.length > 2 && phoneValue.length <= 5) {
         phoneValue = phoneValue.replace(/^(\d{2})(\d{1,4})/, '($1) $2');
     } else if (phoneValue.length > 5 && phoneValue.length <= 9) {
@@ -151,6 +157,7 @@ function formatPhone() {
 
     phoneInput.value = phoneValue;
 
+    // Verifica se o número de telefone é válido
     const isValid = /^\(\d{2}\) \d{5}-\d{4}$/.test(phoneValue);
     if (isValid) {
         phoneInput.style.borderColor = 'green';
@@ -159,25 +166,28 @@ function formatPhone() {
     }
 }
 
-
 // Função para validar o CPF
 function validateCPF() {
     const cpfInput = document.getElementById('cpf');
     let cpfValue = cpfInput.value.trim();
 
+    // Limita o comprimento do CPF
     if (cpfValue.length > 14) {
         cpfValue = cpfValue.slice(0, 14);
         cpfInput.value = cpfValue;
     }
 
+    // Remove caracteres não numéricos
     cpfValue = cpfValue.replace(/\D/g, '');
 
+    // Formata o CPF
     cpfValue = cpfValue.replace(/(\d{3})(\d)/, '$1.$2');
     cpfValue = cpfValue.replace(/(\d{3})(\d)/, '$1.$2');
     cpfValue = cpfValue.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
 
     cpfInput.value = cpfValue;
 
+    // Verifica se o CPF é válido
     const isValid = isValidCPF(cpfValue);
     if (isValid) {
         cpfInput.style.borderColor = 'green';
@@ -230,20 +240,22 @@ function formatCardNumber() {
     }
 }
 
-
 // Função para formatar o CVV e validar
 function formatCVV() {
     const cvvInput = document.getElementById('cvv');
     let cvvValue = cvvInput.value.trim();
 
+    // Remove caracteres não numéricos
     cvvValue = cvvValue.replace(/\D/g, '');
 
+    // Limita o comprimento do CVV
     if (cvvValue.length > 3) {
         cvvValue = cvvValue.slice(0, 3);
     }
 
     cvvInput.value = cvvValue;
 
+    // Verifica se o CVV é válido
     const isValid = cvvValue.length === 3;
     if (isValid) {
         cvvInput.style.borderColor = 'green';
@@ -252,23 +264,27 @@ function formatCVV() {
     }
 }
 
-// Função para formatar a data e validar
+// Função para formatar a data de expiração e validar
 function formatExpirationDate() {
     const expirationDateInput = document.getElementById('expiration-date');
     let expirationDateValue = expirationDateInput.value.trim();
 
+    // Remove caracteres não numéricos
     expirationDateValue = expirationDateValue.replace(/\D/g, '');
 
+    // Limita o comprimento da data de expiração
     if (expirationDateValue.length > 6) {
         expirationDateValue = expirationDateValue.slice(0, 6);
     }
 
+    // Formata a data de expiração
     if (expirationDateValue.length > 2) {
         expirationDateValue = expirationDateValue.replace(/^(\d{2})(\d{0,4})/, '$1/$2');
     }
 
     expirationDateInput.value = expirationDateValue;
 
+    // Verifica se a data de expiração é válida
     const isValid = isValidExpirationDate(expirationDateValue);
     if (isValid) {
         expirationDateInput.style.borderColor = 'green';
@@ -277,6 +293,7 @@ function formatExpirationDate() {
     }
 }
 
+// Função para validar a data de expiração
 function isValidExpirationDate(date) {
     const parts = date.split('/');
     if (parts.length !== 2) return false;
@@ -288,6 +305,7 @@ function isValidExpirationDate(date) {
     return month >= 1 && month <= 12 && (year > currentYear || (year === currentYear && month >= new Date().getMonth() + 1));
 }
 
+// Adiciona listeners para eventos de input nos campos relevantes
 document.getElementById('expiration-date').addEventListener('input', formatExpirationDate);
 document.getElementById('fullname').addEventListener('input', validateFullName);
 document.getElementById('email').addEventListener('input', validateEmail);
