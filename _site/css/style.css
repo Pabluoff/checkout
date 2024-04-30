@@ -119,7 +119,7 @@ body {
 }
 
 .payment-option:hover {
-    border-color: #929292;
+    border-color: #b5b5b5;
 }
 
 .selected {
@@ -283,7 +283,14 @@ body {
     overflow-y: auto;
     box-sizing: border-box;
     padding-top: 40px;
-    ;
+}
+
+.payment-success::-webkit-scrollbar {
+    width: 0; 
+}
+
+.payment-success {
+    scrollbar-width: none;
 }
 
 .payment-success-content {
